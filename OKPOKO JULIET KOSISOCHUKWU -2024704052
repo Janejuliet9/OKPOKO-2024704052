@@ -1,0 +1,28 @@
+num_students = int(input("Enter the number of students: "))
+student_records = []
+
+for i in range(1, num_students + 1):
+    score = int(input(f"Enter score for student {i}: "))
+
+    if 70 <= score <= 100:
+        grade = "A"
+    elif 60 <= score <= 69:
+        grade = "B"
+    elif 50 <= score <= 59:
+        grade = "C"
+    elif 45 <= score <= 49:
+        grade = "D"
+    elif 40 <= score <= 44:
+        grade = "E"
+    elif 0 <= score <= 39:
+        grade = "F"
+    else:
+        grade = "Invalid score"
+
+    student_records.append((i, score, grade))
+
+# Summary
+print("\n--- Summary Report ---")
+for student in student_records:
+    student_number, score, grade = student
+    print(f"Student {student_number}: Score = {score}, Grade = {grade}")
